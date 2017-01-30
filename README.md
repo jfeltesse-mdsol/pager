@@ -12,38 +12,38 @@ import { render } from 'react-dom';
 import Pager from 'react-pager';
 
 class App extends React.Component {
-	constructor(props) {
-		super(props);
+  constructor(props) {
+    super(props);
 
-		this.handlePageChanged = this.handlePageChanged.bind(this);
+    this.handlePageChanged = this.handlePageChanged.bind(this);
 
-		this.state = {
-			total:       11,
-			current:     7,
-			visiblePage: 3,
-		};
-	}
+    this.state = {
+      total:       11,
+      current:     7,
+      visiblePage: 3,
+    };
+  }
 
-	handlePageChanged(newPage) {
-		this.setState({ current : newPage });
-	}
+  handlePageChanged(newPage) {
+    this.setState({ current : newPage });
+  }
 
-	render() {
-		return (
-			<Pager
-				total={this.state.total}
-				current={this.state.current}
-				visiblePages={this.state.visiblePage}
-				titles={{ first: '<|', last: '>|' }}
-				className="pagination-sm pull-right"
-				onPageChanged={this.handlePageChanged}
-			/>
-		);
-	}
+  render() {
+    return (
+      <Pager
+        total={this.state.total}
+        current={this.state.current}
+        visiblePages={this.state.visiblePage}
+        titles={{ first: '<|', last: '>|' }}
+        className="pagination-sm pull-right"
+        onPageChanged={this.handlePageChanged}
+      />
+    );
+  }
 }
 
 window.onload = () => {
-	render(React.createElement(App), document.querySelector('#app'));
+  render(React.createElement(App), document.querySelector('#app'));
 };
 
 ```
@@ -70,6 +70,9 @@ npm test
 
 ## Changelog
 
+### next
+* Added `page-item` and `page-link` classes for Bootstrap 4.
+
 ### v1.3.0
 * @kallaspriit fixed [#16](https://github.com/AZaviruha/pager/issues/16)
 * Updates devDependencies
@@ -88,7 +91,7 @@ npm test
 
 ### v1.1.1
 * Updated to React 0.13.
-* Updated local demo. 
+* Updated local demo.
 
 ### v1.1.0
 * Added `titles` property. See [demo](http://jsfiddle.net/azaviruha/kb3gN/10213/).
